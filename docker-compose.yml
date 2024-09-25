@@ -1,0 +1,27 @@
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: lifedexv2
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=lifedex
+      - POSTGRES_PASSWORD=lifedex
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/lifedb
+      - SPRING_DATASOURCE_USERNAME=lifedex
+      - SPRING_DATASOURCE_PASSWORD=lifedex
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+
+  db:
+    image: postgres
+    container_name: lifedb
+    environment:
+      - POSTGRES_USER=lifedex
+      - POSTGRES_PASSWORD=lifedex
+      - POSTGRES_DB=lifedb
+    ports:
+      - "5432:5432"
