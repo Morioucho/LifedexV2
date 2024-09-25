@@ -3,7 +3,6 @@ package com.morioucho.lifedexv2.service;
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.repository.PostRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

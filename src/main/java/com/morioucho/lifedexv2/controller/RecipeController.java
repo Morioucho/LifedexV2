@@ -6,7 +6,6 @@ import com.morioucho.lifedexv2.service.RecipeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/recipes")
 public class RecipeController {
-    @Autowired
-    private RecipeService recipeService;
+    private final RecipeService recipeService;
+
+    public RecipeController(RecipeService recipeService){
+        this.recipeService = recipeService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Recipe>> getAllRecipes() {

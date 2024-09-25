@@ -6,7 +6,6 @@ import com.morioucho.lifedexv2.service.PostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
-    @Autowired
-    private PostService postService;
+    private final PostService postService;
+
+    public PostController(PostService postService){
+        this.postService = postService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Post>> getAllPosts(){
