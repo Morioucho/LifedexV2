@@ -2,11 +2,6 @@
   <img src="docs/images/LifeDexLogoSmall.png" width="400px" alt="LifeDex Logo">
 </p>
 
-<p align="center">
-  <img src="https://github.com/Morioucho/LifeDex/actions/workflows/gradle.yml/badge.svg" alt="Gradle Test Status">
-</p>
-
-
 # LifeDex: A Guidebook on Life
 LifeDex is a website intended to help people who are new to living by themselves with useful guides on various amounts of topics.
 
