@@ -1,0 +1,1 @@
+![Easter Egg](https://media.discordapp.net/attachments/850110174387896351/1264799899728351272/Tomfoolery.png?ex=669f3032&is=669ddeb2&hm=309f7ec5599f90f4ca8e3db30008fe5a1749be6f32d0af2ba1d08679edadd33a&=&format=webp&quality=lossless&width=825&height=463)
