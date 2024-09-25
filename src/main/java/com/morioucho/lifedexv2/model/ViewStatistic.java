@@ -14,7 +14,7 @@ public class ViewStatistic {
     private ZonedDateTime currentWeekEnd;
 
     public ViewStatistic(){
-        ZoneId zoneId = ZoneId.of("America/New_York") ;
+        ZoneId zoneId = ZoneId.of("America/Los_Angeles") ;
         LocalDate today = LocalDate.now(zoneId) ;
 
         this.currentDateEnd = today.plusDays(1).atStartOfDay(zoneId);
@@ -22,15 +22,23 @@ public class ViewStatistic {
     }
 
     public void view(LocalDateTime time){
-        checkViewClears();
+        checkViewClears(time.atZone(ZoneId.of("America/Los_Angeles")));
 
         dailyViews++;
         weeklyViews++;
         allTimeViews++;
     }
 
-    private void checkViewClears(){
-        if(ZonedDateTime.now().isAfter(currentWeekEnd)){
+    public void view(){
+        checkViewClears(ZonedDateTime.now());
+
+        dailyViews++;
+        weeklyViews++;
+        allTimeViews++;
+    }
+
+    private void checkViewClears(ZonedDateTime now){
+        if(now.isAfter(currentWeekEnd)){
             currentWeekEnd = currentWeekEnd.plusDays(7);
             currentDateEnd = currentDateEnd.plusDays(1);
 
@@ -40,7 +48,7 @@ public class ViewStatistic {
             return;
         }
 
-        if(ZonedDateTime.now().isAfter(currentDateEnd)){
+        if(now.isAfter(currentDateEnd)){
             currentDateEnd = currentDateEnd.plusDays(1);
 
             this.dailyViews = 0;
