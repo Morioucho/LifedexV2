@@ -89,4 +89,8 @@ public class Post{
     public void setViewStatistic(ViewStatistic viewStatistic) {
         this.viewStatistic = viewStatistic;
     }
+
+    public void view(){
+        this.viewStatistic.view();
+    }
 }
