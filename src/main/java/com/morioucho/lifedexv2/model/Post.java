@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Embedded;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +13,10 @@ public class Post{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Embedded
+    private ViewStatistic viewStatistic;
+
     private String title;
     private String content;
 
@@ -75,5 +80,13 @@ public class Post{
 
     public void setLastModified(LocalDateTime lastModified) {
         this.lastModified = lastModified;
+    }
+
+    public ViewStatistic getViewStatistic() {
+        return viewStatistic;
+    }
+
+    public void setViewStatistic(ViewStatistic viewStatistic) {
+        this.viewStatistic = viewStatistic;
     }
 }
