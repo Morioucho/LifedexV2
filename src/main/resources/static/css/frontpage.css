@@ -60,13 +60,13 @@ header {
 }
 
 .nav_links li a:hover{
-    color: #FFE5CC;
+    color: #114d1e;
 }
 
 button {
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     color: #111111;
     border: none;
     border-radius: 50px;
@@ -75,7 +75,7 @@ button {
 }
 
 button:hover {
-    background-color: #f2f2f2;
+    background-color: #02441d;
     color: #111111;
 }
 
@@ -94,4 +94,3 @@ button:hover {
     background-color: #1e4c0c;
     color: white;
 }
-
