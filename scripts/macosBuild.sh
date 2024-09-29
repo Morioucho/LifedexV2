@@ -1,3 +1,5 @@
+cd ..
+
 echo "Running Maven build..."
 ./mvnw package -DskipTests
 
