@@ -20,10 +20,6 @@ public class RecipeService {
         return recipeRepository.findAll();
     }
 
-    public List<Recipe> findAll(){
-        return recipeRepository.findAll();
-    }
-
     public Recipe findByID(Long id){
         return recipeRepository.findById(id).orElse(null);
     }
