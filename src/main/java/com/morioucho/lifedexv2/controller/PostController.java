@@ -6,6 +6,7 @@ import com.morioucho.lifedexv2.service.PostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,15 +20,13 @@ public class PostController {
         this.postService = postService;
     }
 
+
     @GetMapping
-    public ResponseEntity<List<Post>> getAllPosts(){
+    public String getAllPosts(Model model){
         List<Post> found = postService.findAll();
+        model.addAttribute("posts", found);
 
-        if(found.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-
-        return new ResponseEntity<>(found, HttpStatus.OK);
+        return "posts";
     }
 
     @GetMapping("/{id}")

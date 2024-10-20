@@ -6,6 +6,7 @@ import com.morioucho.lifedexv2.service.RecipeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,14 +21,11 @@ public class RecipeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Recipe>> getAllRecipes() {
+    public String getAllRecipes(Model model) {
         List<Recipe> found = recipeService.getAllRecipes();
+        model.addAttribute("recipes", found);
 
-        if(found.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-
-        return new ResponseEntity<>(found, HttpStatus.OK);
+        return "recipes";
     }
 
     @GetMapping("/{id}")
