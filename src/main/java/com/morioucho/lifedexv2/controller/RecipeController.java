@@ -5,17 +5,13 @@ import com.morioucho.lifedexv2.service.RecipeService;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
-@RestController
-@RequestMapping("/api/recipes")
+@RequestMapping("/recipes")
 public class RecipeController {
     private final RecipeService recipeService;
 
@@ -42,24 +38,5 @@ public class RecipeController {
 
         log.error("Unable to find a recipe with ID {}.", id);
         return "redirect:/error";
-    }
-
-    @PostMapping("/new")
-    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe) {
-        if (recipe.getTitle() == null) {
-            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
-        }
-
-        return new ResponseEntity<>(recipeService.createRecipe(recipe), HttpStatus.CREATED);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteRecipe(@PathVariable Long id) {
-        if (recipeService.findByID(id) == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
-        recipeService.deleteRecipe(id);
-        return new ResponseEntity<>("Successfully deleted the Recipe with ID " + id + ".", HttpStatus.OK);
     }
 }
