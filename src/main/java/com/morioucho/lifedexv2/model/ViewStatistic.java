@@ -1,10 +1,15 @@
 package com.morioucho.lifedexv2.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
+@Getter
+@Setter
 public class ViewStatistic {
     private long allTimeViews;
     private long weeklyViews;
@@ -53,29 +58,5 @@ public class ViewStatistic {
 
             this.dailyViews = 0;
         }
-    }
-
-    public long getAllTimeViews() {
-        return allTimeViews;
-    }
-
-    public void setAllTimeViews(long allTimeViews) {
-        this.allTimeViews = allTimeViews;
-    }
-
-    public long getWeeklyViews() {
-        return weeklyViews;
-    }
-
-    public void setWeeklyViews(long weeklyViews) {
-        this.weeklyViews = weeklyViews;
-    }
-
-    public long getDailyViews() {
-        return dailyViews;
-    }
-
-    public void setDailyViews(long dailyViews) {
-        this.dailyViews = dailyViews;
     }
 }
