@@ -2,11 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title th:text="${post.title}"></title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/article.css" />
   </head>
 
   <body>
     <h1 th:text="${post.title}"></h1>
+    <img th:src="@{/images/article/post.png}"/>
     <p th:text="${post.content}"></p>
     <p>
       By <span th:text="${post.authorFirst} + ' ' + ${post.authorLast}"></span>
@@ -27,5 +28,6 @@
     </p>
     
     <a href="/posts">Back to Posts</a>
+    <script href="../static/js/article.js"></script>
   </body>
 </html>
