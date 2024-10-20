@@ -5,13 +5,15 @@ import com.morioucho.lifedexv2.service.RecipeService;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
-@RequestMapping("/recipes")
+@Controller
+@RequestMapping(("/recipes"))
 public class RecipeController {
     private final RecipeService recipeService;
 

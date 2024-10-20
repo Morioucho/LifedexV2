@@ -21,7 +21,6 @@ public class DataLoader {
     }
 
     private void loadPosts() {
-        // Hardcoded strings for posts
         String[] postStrings = {
                 "Post Title 1,This is the content of post 1,John,Doe",
                 "Post Title 2,This is the content of post 2,Jane,Smith",
@@ -47,7 +46,6 @@ public class DataLoader {
     }
 
     private void loadRecipes() {
-        // Hardcoded strings for recipes
         String[] recipeStrings = {
                 "Recipe Title 1,Description of recipe 1,Chef A,LastName A,Step 1; Step 2; Step 3,30,200,Italian,4",
                 "Recipe Title 2,Description of recipe 2,Chef B,LastName B,Step 1; Step 2; Step 3,45,300,Mexican,2",

@@ -2,11 +2,16 @@ package com.morioucho.lifedexv2.controller;
 
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.service.PostService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/api/posts")
+
+@Controller
+@RequestMapping(("/api/posts"))
 public class PostsAPIController {
     private final PostService postService;
 

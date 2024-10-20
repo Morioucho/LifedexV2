@@ -5,12 +5,14 @@ import com.morioucho.lifedexv2.service.PostService;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
+@Controller
 @RequestMapping("/posts")
 public class PostController {
     private final PostService postService;

@@ -6,7 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/api/recipes")
+@RestController
+@RequestMapping("/api/recipes")
 public class RecipeAPIController {
     private final RecipeService recipeService;
 
