@@ -5,6 +5,7 @@
         <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/article.css">
     </head>
 
+<<<<<<< Updated upstream
     <body>
         <h1 th:text="${post.title}"></h1>
         <img th:src="@{/images/article/recipe.png}"/>
@@ -12,6 +13,18 @@
         <p>
         By <span th:text="${post.authorFirst} + ' ' + ${post.authorLast}"></span>
         </p>
+=======
+<head>
+    <link rel="stylesheet" href="../static/css/article.css">
+    <nav>
+        <ul class="nav_links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/posts.html">Posts</a></li>
+            <li><a href="/recipes.html">Recipes</a></li>
+        </ul>
+    </nav>
+</head>
+>>>>>>> Stashed changes
 
     <p>
         Created on
@@ -29,6 +42,11 @@
 
       <a href="/posts">Back to Posts</a>
 
+<<<<<<< Updated upstream
     <script href="../static/js/article.js"></script>
     </body>
+=======
+<script href="../static/js/article.js"></script>
+
+>>>>>>> Stashed changes
 </html>
