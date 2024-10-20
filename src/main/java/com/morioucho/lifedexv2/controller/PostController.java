@@ -3,6 +3,8 @@ package com.morioucho.lifedexv2.controller;
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.service.PostService;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
@@ -38,6 +41,7 @@ public class PostController {
             return "post";
         }
 
+        log.error("Unable to find a post with ID {}.", id);
         return "redirect:/error";
     }
 

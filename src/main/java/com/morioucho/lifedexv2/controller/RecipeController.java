@@ -3,6 +3,8 @@ package com.morioucho.lifedexv2.controller;
 import com.morioucho.lifedexv2.model.Recipe;
 import com.morioucho.lifedexv2.service.RecipeService;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/recipes")
 public class RecipeController {
@@ -37,6 +40,7 @@ public class RecipeController {
             return "recipe";
         }
 
+        log.error("Unable to find a recipe with ID {}.", id);
         return "redirect:/error";
     }
 

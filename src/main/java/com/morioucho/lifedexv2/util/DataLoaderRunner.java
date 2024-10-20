@@ -18,10 +18,7 @@ public class DataLoaderRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String postsPath = "/posts.txt";
-        String recipesPath = "/recipes.txt";
-
-        DataLoader dataLoader = new DataLoader(postsPath, recipesPath);
+        DataLoader dataLoader = new DataLoader();
 
         postService.saveAll(dataLoader.listPosts());
         recipeService.saveAll(dataLoader.listRecipes());
