@@ -25,17 +25,19 @@ public class RecipeController {
         List<Recipe> found = recipeService.getAllRecipes();
         model.addAttribute("recipes", found);
 
-        return "recipes";
+        return "recipe";
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Recipe> getRecipeByID(@PathVariable Long id) {
-        Recipe foundRecipe = recipeService.findByID(id);
-        if(foundRecipe == null){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    public String getRecipeByID(@PathVariable Long id, Model model) {
+        Recipe found = recipeService.findByID(id);
+
+        if(found != null) {
+            model.addAttribute("recipe", found);
+            return "recipe";
         }
 
-        return new ResponseEntity<>(recipeService.findByID(id), HttpStatus.OK);
+        return "redirect:/error";
     }
 
     @PostMapping("/new")

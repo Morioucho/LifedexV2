@@ -26,17 +26,19 @@ public class PostController {
         List<Post> found = postService.findAll();
         model.addAttribute("posts", found);
 
-        return "posts";
+        return "post";
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Post> getPostByID(@PathVariable Long id){
-        Post foundPost = postService.findByID(id);
-        if(foundPost == null){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    public String getPostByID(@PathVariable Long id, Model model) {
+        Post found = postService.findByID(id);
+
+        if(found != null) {
+            model.addAttribute("post", found);
+            return "post";
         }
 
-        return new ResponseEntity<>(foundPost, HttpStatus.OK);
+        return "redirect:/error";
     }
 
     @PostMapping("/new")
