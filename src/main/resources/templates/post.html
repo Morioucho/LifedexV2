@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="../static/css/article.css">
-    </head>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:text="${post.title}"></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
 
-    <body>
-        <h1 id="PostName"">Post Name</h1>
-        <p id="PostDate">Post Publish Date</p>
-        <br>
-        <img id="PostImage" href="../static/images/image.png">
-        <p id="PostDescription">Post Description</p>
-    </body>
+  <body>
+    <h1 th:text="${post.title}"></h1>
+    <p th:text="${post.content}"></p>
+    <p>
+      By <span th:text="${post.authorFirst} + ' ' + ${post.authorLast}"></span>
+    </p>
 
-    <script href="../static/js/article.js"></script>
+    <p>
+      Created on
+      <span
+        th:text="${#dates.format(post.creationDate, 'yyyy-MM-dd HH:mm')}"
+      ></span>
+    </p>
+
+    <p>
+      Last modified on
+      <span
+        th:text="${#dates.format(post.lastModified, 'yyyy-MM-dd HH:mm')}"
+      ></span>
+    </p>
+    
+    <a href="/posts">Back to Posts</a>
+  </body>
 </html>
