@@ -8,44 +8,44 @@
 </head>
 
 <body>
-<header>
-    <a href="/index.html"><img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" /></a>
+    <header>
+        <img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
 
-    <nav>
-        <ul class="nav_links">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/posts.html">Posts</a></li>
-            <li><a href="/recipes.html">Recipes</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/posts.html">Posts</a></li>
+                <li><a href="/recipes.html">Recipes</a></li>
+            </ul>
+        </nav>
 
-    <a class="cta" href="/search.html"><button>Search</button></a>
-</header>
+        <a class="cta" href="/search.html"><button>Search</button></a>
+    </header>
 
-<h1 th:text="${recipe.title}"></h1>
-<img th:src="@{/images/article/recipe.png}" alt="Recipe Image" />
-<p th:text="${recipe.content}"></p>
+    <h1 th:text="${recipe.title}"></h1>
+    <img th:src="@{/images/article/recipe.png}" alt="Recipe Image" />
+    <p th:text="${recipe.content}"></p>
 
-<p>By <span th:text="${recipe.authorFirst}"></span> <span th:text="${recipe.authorLast}"></span></p>
+    <p>By <span th:text="${recipe.authorFirst}"></span> <span th:text="${recipe.authorLast}"></span></p>
 
-<p>Cook Time: <span th:text="${recipe.cookTime}"></span> minutes</p>
-<p>Calories: <span th:text="${recipe.calories}"></span> kcal</p>
-<p>Cuisine: <span th:text="${recipe.cuisine}"></span></p>
-<p>Yield: <span th:text="${recipe.yield}"></span> servings</p>
+    <p>Cook Time: <span th:text="${recipe.cookTime}"></span> minutes</p>
+    <p>Calories: <span th:text="${recipe.calories}"></span> kcal</p>
+    <p>Cuisine: <span th:text="${recipe.cuisine}"></span></p>
+    <p>Yield: <span th:text="${recipe.yield}"></span> servings</p>
 
-<p>
-    Created on
-    <span th:text="${#dates.format(recipe.creationDate, 'yyyy-MM-dd HH:mm')}"></span>
-</p>
+    <p>
+        Created on
+        <span th:text="${#dates.format(recipe.creationDate, 'yyyy-MM-dd HH:mm')}"></span>
+    </p>
 
-<p>
-    Last modified on
-    <span th:text="${#dates.format(recipe.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
-</p>
+    <p>
+        Last modified on
+        <span th:text="${#dates.format(recipe.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
+    </p>
 
-<a href="/article" class="ParentRedirect">Back to Recipes</a>
+    <a href="/article" class="ParentRedirect">Back to Recipes</a>
 
-<script href="../static/js/article.js"></script>
+    <script href="../static/js/article.js"></script>
 </body>
 
 </html>
