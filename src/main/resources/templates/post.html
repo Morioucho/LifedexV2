@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title th:text="${post.title}"></title>
-    <link rel="stylesheet" th:href="@{/css/article.css}" href="../static/css/article.css"/>
-    <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}" href="images/favicon.png"/>
-  </head>
+<head>
+  <title th:text="${post.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/article.css}" />
+  <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
+</head>
 
-  <body>
-    <header>
-      <img class="logo" src="../static/images/LifeDexLogoSmall.png" th:src="@{../static/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
-  
-      <nav>
-        <ul class="nav_links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/posts.html">Posts</a></li>
-          <li><a href="/recipes.html">Recipes</a></li>
-        </ul>
-      </nav>
-  
-  
-      <a class="cta" href="/search.html"><button>Search</button></a>
-    </header>
-    
-    <h1 th:text="${post.title}"></h1>
-    <img th:src="@{/images/article/post.png}" alt="Post Image"/>
-    <p th:text="${post.content}"></p>
+<body>
+<header>
+  <img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
 
-    <p>
-      By <span th:text="${post.authorFirst}"></span> <span th:text="${post.authorLast}"></span>
-    </p>
+  <nav>
+    <ul class="nav_links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/posts.html">Posts</a></li>
+      <li><a href="/recipes.html">Recipes</a></li>
+    </ul>
+  </nav>
 
-    <p>
-      Created on
-      <span th:text="${#dates.format(post.creationDate, 'yyyy-MM-dd HH:mm')}"></span>
-    </p>
+  <a class="cta" href="/search.html"><button>Search</button></a>
+</header>
 
-    <p>
-      Last modified on
-      <span th:text="${#dates.format(post.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
-    </p>
+<h1 th:text="${post.title}"></h1>
+<img th:src="@{/images/post.png}" alt="Post Image"/>
+<p th:text="${post.content}"></p>
 
-    <a href="../static/posts.html" id="ParentRedirect">Back to Posts</a>
+<p>By <span th:text="${post.authorFirst}"></span> <span th:text="${post.authorLast}"></span></p>
 
-    <script th:src="@{/js/article.js}"></script>
-  </body>
+<p>
+  Created on <span th:text="${#dates.format(post.creationDate, 'yyyy-MM-dd HH:mm')}"></span>
+</p>
+
+<p>
+  Last modified on <span th:text="${#dates.format(post.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
+</p>
+
+<a href="/posts" id="ParentRedirect">Back to Posts</a>
+
+<script th:src="@{/js/article.js}"></script>
+</body>
 </html>
