@@ -3,6 +3,7 @@ package com.morioucho.lifedexv2.controller;
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.service.PostService;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
+@Slf4j
 @Controller
 @RequestMapping(("/api/posts"))
 public class PostsAPIController {
@@ -22,6 +24,8 @@ public class PostsAPIController {
     @PostMapping("/new")
     public ResponseEntity<Post> createPost(@RequestBody Post post){
         if (post.getTitle() == null || post.getContent() == null) {
+            log.error("The given post was missing a crucial element.");
+
             return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
         }
 
@@ -38,6 +42,7 @@ public class PostsAPIController {
             return new ResponseEntity<>("The post with ID " + id + "was successfully deleted.", HttpStatus.OK);
         }
 
+        log.error("The post with ID {} was not found.", id);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

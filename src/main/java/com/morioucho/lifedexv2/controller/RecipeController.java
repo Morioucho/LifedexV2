@@ -17,14 +17,14 @@ import java.util.List;
 public class RecipeController {
     private final RecipeService recipeService;
 
-    public RecipeController(RecipeService recipeService){
+    public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
 
     @GetMapping
     public String getAllRecipes(Model model) {
         List<Recipe> found = recipeService.getAllRecipes();
-        model.addAttribute("recipes", found);
+        model.addAttribute("recipe", found);
 
         return "recipe";
     }
@@ -34,6 +34,7 @@ public class RecipeController {
         Recipe found = recipeService.findByID(id);
 
         if(found != null) {
+            found.view();
             model.addAttribute("recipe", found);
             return "recipe";
         }

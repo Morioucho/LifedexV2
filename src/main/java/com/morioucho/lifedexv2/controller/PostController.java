@@ -21,7 +21,6 @@ public class PostController {
         this.postService = postService;
     }
 
-
     @GetMapping
     public String getAllPosts(Model model){
         List<Post> found = postService.findAll();
@@ -35,6 +34,7 @@ public class PostController {
         Post found = postService.findByID(id);
 
         if(found != null) {
+            found.view();
             model.addAttribute("post", found);
             return "post";
         }
