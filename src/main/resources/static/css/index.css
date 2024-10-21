@@ -24,6 +24,15 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    padding: 50px 20%;
+    color: #ffffff;
+    text-align: center;
+}
+
 p {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
