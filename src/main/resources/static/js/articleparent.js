@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementsByClassName('carousel__track'); //Variable to carousel track.
+    const track = document.querySelector('.carousel__track'); //Variable to carousel track.
     const slides = Array.from(track.children);
-    const rightButton = document.getElementsByClassName('carousel__button--right');
-    const leftButton = document.getElementsByClassName('carousel__button--left');
-    const dotNav = document.getElementsByClassName('carousel__nav');
+    const rightButton = document.querySelector('.carousel__button--right');
+    const leftButton = document.querySelector('.carousel__button--left');
+    const dotNav = document.querySelector('.carousel__nav');
     const dot = Array.from(dotNav.children);
 
     const slideWidth = slides[0].getBoundingClientRect().width;
@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }};
     //The slide buttons have to move the images around.
     rightButton.addEventListener("click", e => {
-        const currentSlide = track.getElementsByClassName('current-Slide');
+        const currentSlide = track.querySelector('.current-Slide');
         const nextSlide = currentSlide.nextElementSibling;
         const moveDistance = nextSlide.style.left;
-
+        console.log(moveDistance);
         track.style.transform = 'translateX(-' + moveDistance + ')';
     })
     // The dots have to change to match the slide index.
