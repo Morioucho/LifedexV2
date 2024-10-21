@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-    <html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <title th:text="${recipe.title}"></title>
-        <link rel="stylesheet" th:href="@{/css/article.css}" href="./css/articleparent.css">
-        <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}" href="images/favicon.png"/>
-    </head>
+<head>
+  <title th:text="${recipe.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/article.css}" href="./css/articleparent.css">
+  <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}" href="images/favicon.png" />
+</head>
 
-    <body>
-     <header>
-         <a href="/index.html">
-             <img class="logo" src="images/LifeDexLogoSmall.png" width="120px" alt="LifeDex Logo" />
-         </a>
+<body>
+  <header>
+    <a href="/index.html"><img class="logo" src="images/LifeDexLogoSmall.png" width="120px" alt="LifeDex Logo" /></a>
 
-            <nav>
-              <ul class="nav_links">
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/posts.html">Posts</a></li>
-                <li><a href="/recipes.html">Recipes</a></li>
-              </ul>
-            </nav>
-        
-        <a class="cta" href="/search.html"><button>Search</button></a>
-    </header>
+    <nav>
+      <ul class="nav_links">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/posts.html">Posts</a></li>
+        <li><a href="/recipes.html">Recipes</a></li>
+      </ul>
+    </nav>
 
-    <script href="../static/js/articleparent.js"></script>
-    </body>
+    <a class="cta" href="/search.html"><button>Search</button></a>
+  </header>
+
+  <div class="carousel">
+    <button class="carousel__button carousel__button--left">
+      <img src="images/BornToDillyDally.png" alt="">
+    </button>
+
+    <div class="carousel__track-container">
+      <ul class="carousel__track">
+        <li class="carousel__slide">
+          <img class="carousel__image" src="images/BornToDillyDally.png" alt="">
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="images/BornToDillyDally.png" alt="">
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="images/BornToDillyDally.png" alt="">
+        </li>
+      </ul>
+    </div>
+    
+    <button class="carousel__button carousel__button--right">
+      <img src="images/BornToDillyDally.png" alt="">
+    </button>
+
+    <div class="carousel__nav">
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+    </div>
+  </div>
+
+  <script href="../static/js/articleparent.js"></script>
+</body>
 
 </html>
