@@ -2,8 +2,8 @@ package com.morioucho.lifedexv2.util;
 
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.model.Recipe;
-
 import com.morioucho.lifedexv2.model.ViewStatistic;
+
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
