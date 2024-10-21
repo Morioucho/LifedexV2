@@ -43,10 +43,32 @@ p {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 30px 20%;
     background-color: #111111;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 20%;
+}
+
+.box {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    max-width: 300px;
+}
+
+.box img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .categoryimage {
@@ -61,6 +83,7 @@ header {
 
 .logo {
     cursor: pointer;
+    margin-right: auto;
 }
 
 .nav_links {
