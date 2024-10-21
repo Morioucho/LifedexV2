@@ -43,32 +43,10 @@ p {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 30px 20%;
     background-color: #111111;
-}
-
-.boxes {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 30px 20%;
-}
-
-.box {
-    background-color: #222;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 30%;
-    max-width: 300px;
-}
-
-.box img {
-    width: 80%;
-    height: auto;
-    margin-bottom: 10px;
 }
 
 .categoryimage {
@@ -83,7 +61,6 @@ header {
 
 .logo {
     cursor: pointer;
-    margin-right: auto;
 }
 
 .nav_links {
@@ -142,6 +119,79 @@ button:hover {
     padding: 10px;
     margin-top: 10px;
     text-align: center;
+}
+
+.carousel{
+    position:   relative;
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel__image{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.carousel__track-container{
+    background: #1c6000;
+    height: 100%;
+    position: relative;
+}
+
+.carousel__track{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.carousel__slide{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel__button--left{
+    left: -40px;
+}
+
+.carousel__button--right{
+    right: -40px;
+}
+
+
+.carousel__button img{
+    width: 12px;
+}
+
+.carousel__nav{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel__indicator{
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0,0,0,.3);
+    margin: 0 12px;
+}
+
+.carousel__indicator.current-slide{
+    background: rgba(0,0,0,.75);
 }
 
 #tagline {
