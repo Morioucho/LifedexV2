@@ -144,6 +144,8 @@ button:hover {
     padding: 0;
     margin: 0;
     list-style: none;
+    position: relative;
+    height: 100%;
 }
 
 .carousel__slide{
