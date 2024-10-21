@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title th:text="${recipe.title}"></title>
+        <link rel="stylesheet" th:href="@{/css/article.css}" href="./css/articleparent.css">
+    </head>
+
+    <body>
+     <header>
+        <img class="logo" src="../static/images/LifeDexLogoSmall.png" width="120px" alt="LifeDex Logo" />
+        
+            <nav>
+              <ul class="nav_links">
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/posts.html">Posts</a></li>
+                <li><a href="/recipes.html">Recipes</a></li>
+              </ul>
+            </nav>
+        
+        <a class="cta" href="/search.html"><button>Search</button></a>
+    </header>
+
+    <script href="../static/js/articleparent.js"></script>
+    </body>
+
+</html>
