@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title th:text="${post.title}"></title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/article.css" />
-  </head>
+<head>
+  <title th:text="${post.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/article.css}"/>
+</head>
 
-  <body>
-    <h1 th:text="${post.title}"></h1>
-    <img th:src="@{/images/article/post.png}"/>
-    <p th:text="${post.content}"></p>
-    <p>
-      By <span th:text="${post.authorFirst} + ' ' + ${post.authorLast}"></span>
-    </p>
+<body>
+<h1 th:text="${post.title}"></h1>
+<img th:src="@{/images/article/post.png}" alt="Post Image"/>
+<p th:text="${post.content}"></p>
 
-    <p>
-      Created on
-      <span
-        th:text="${#dates.format(post.creationDate, 'yyyy-MM-dd HH:mm')}"
-      ></span>
-    </p>
+<p>
+  By <span th:text="${post.authorFirst}"></span> <span th:text="${post.authorLast}"></span>
+</p>
 
-    <p>
-      Last modified on
-      <span
-        th:text="${#dates.format(post.lastModified, 'yyyy-MM-dd HH:mm')}"
-      ></span>
-    </p>
-    
-    <a href="/posts">Back to Posts</a>
-    <script href="../static/js/article.js"></script>
-  </body>
+<p>
+  Created on
+  <span th:text="${#dates.format(post.creationDate, 'yyyy-MM-dd HH:mm')}"></span>
+</p>
+
+<p>
+  Last modified on
+  <span th:text="${#dates.format(post.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
+</p>
+
+<a href="/posts">Back to Posts</a>
+
+<script th:src="@{/js/article.js}"></script>
+</body>
 </html>

@@ -3,6 +3,7 @@ package com.morioucho.lifedexv2.util;
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.model.Recipe;
 
+import com.morioucho.lifedexv2.model.ViewStatistic;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class DataLoader {
             }
 
             Post post = new Post();
+            post.setViewStatistic(new ViewStatistic());
             post.setTitle(fields[0]);
             post.setContent(fields[1]);
             post.setAuthorFirst(fields[2]);
@@ -61,6 +63,7 @@ public class DataLoader {
             }
 
             Recipe recipe = new Recipe();
+            recipe.setViewStatistic(new ViewStatistic());
             recipe.setTitle(fields[0]);
             recipe.setContent(fields[1]);
             recipe.setAuthorFirst(fields[2]);
