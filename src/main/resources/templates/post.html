@@ -8,10 +8,11 @@
 
   <body>
     <header>
-      <img class="logo" src="../static/images/LifeDexLogoSmall.png" width="120px" alt="LifeDex Logo" />
+      <img class="logo" src="../static/images/LifeDexLogoSmall.png" th:src="@{../static/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
   
       <nav>
         <ul class="nav_links">
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/posts.html">Posts</a></li>
           <li><a href="/recipes.html">Recipes</a></li>
@@ -40,7 +41,7 @@
       <span th:text="${#dates.format(post.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
     </p>
 
-    <a href="/posts" id="ParentRedirect">Back to Posts</a>
+    <a href="../static/posts.html" id="ParentRedirect">Back to Posts</a>
 
     <script th:src="@{/js/article.js}"></script>
   </body>
