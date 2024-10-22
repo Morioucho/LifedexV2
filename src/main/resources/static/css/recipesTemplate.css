@@ -139,7 +139,7 @@ button:hover {
 .info-container {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 15px;
     background-color: #111111;
     border-radius: 10px;
     margin: 10px auto;

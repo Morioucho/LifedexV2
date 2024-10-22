@@ -29,7 +29,7 @@ public class Recipe {
 
     private String title;
     private String content;
-    
+
     private String authorFirst;
     private String authorLast;
 
