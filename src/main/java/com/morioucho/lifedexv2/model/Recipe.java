@@ -1,5 +1,6 @@
 package com.morioucho.lifedexv2.model;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Setter
 @Getter
@@ -22,9 +24,12 @@ public class Recipe {
     @Embedded
     private ViewStatistic viewStatistic;
 
+    @ElementCollection
+    private List<String> ingredients;
+
     private String title;
     private String content;
-
+    
     private String authorFirst;
     private String authorLast;
 
