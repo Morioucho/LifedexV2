@@ -52,13 +52,13 @@
         hideShowArrows(slides, prevButton, nextButton, nextIndex)
     });
 
-    prevButtonButton.addEventListener("click", e => {
+    prevButton.addEventListener("click", e => {
         const currentSlide = track.querySelector('.current-slide');
         const prevSlide = currentSlide.previousElementSibling;
         const currentDot = dotsNav.querySelector('.current-slide');
-        const prevDot = currentDot.previousElementSiblingElementSibling;
-        moveToSlide(track, currentSlide, prevSlide);
+        const prevDot = currentDot.previousElementSibling;
         const prevIndex = slides.findIndex(slide => slide === prevSlide);
+        moveToSlide(track, currentSlide, prevSlide);
         updateDots(currentDot, prevDot);
         hideShowArrows(slides, prevButton, nextButton, prevIndex);
     });
