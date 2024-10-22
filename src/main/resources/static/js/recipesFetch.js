@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function articleSpecificDataFetch() {
       try {
-        const response = await fetch("/api/recipes", {
+        const response = await fetch("/api/recipes/{id}", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
