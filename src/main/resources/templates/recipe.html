@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
+  <head>
     <title th:text="${recipe.title}"></title>
     <link rel="stylesheet" th:href="@{/css/recipesTemplate.css}" />
     <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
+      <img
+        class="logo"
+        th:src="@{/images/LifeDexLogoSmall.png}"
+        width="120px"
+        alt="LifeDex Logo"
+      />
 
-        <nav>
-            <ul class="nav_links">
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/posts.html">Posts</a></li>
-                <li><a href="/recipes.html">Recipes</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/posts.html">Posts</a></li>
+          <li><a href="/recipes.html">Recipes</a></li>
+        </ul>
+      </nav>
 
-        <a class="cta" href="/search.html"><button>Search</button></a>
+      <a class="cta" href="/search.html"><button>Search</button></a>
     </header>
 
     <h1 th:text="${recipe.title}"></h1>
@@ -30,17 +34,33 @@
         th:text="${#temporals.format(recipe.lastModified, 'MM-dd-yyyy HH:mm')}"
       ></span>
     </p>
-    <img class="post-image" th:src="@{'/images/recipes/' + ${recipe.id} + '.png'}" alt="Post Image"/>
-    <p th:text="${recipe.content}"></p>
+    <img
+      class="post-image"
+      th:src="@{'/images/recipes/' + ${recipe.id} + '.png'}"
+      alt="Post Image"
+    />
 
-    <p>By <span th:text="${recipe.authorFirst}"></span> <span th:text="${recipe.authorLast}"></span></p>
+    <div class="info-container">
+      <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <li
+            th:each="ingredient : ${recipe.ingredients}"
+            th:text="${ingredient}"
+          ></li>
+        </ul>
+      </div>
+      <div class="additional-info">
+        <h2>Info</h2>
+        <p>Cook Time: <span th:text="${recipe.cookTime}"></span> minutes</p>
+        <p>Calories: <span th:text="${recipe.calories}"></span> kcal</p>
+        <p>Cuisine: <span th:text="${recipe.cuisine}"></span></p>
+        <p>Yield: <span th:text="${recipe.yield}"></span> servings</p>
+      </div>
+    </div>
 
-    <p>Cook Time: <span th:text="${recipe.cookTime}"></span> minutes</p>
-    <p>Calories: <span th:text="${recipe.calories}"></span> kcal</p>
-    <p>Cuisine: <span th:text="${recipe.cuisine}"></span></p>
-    <p>Yield: <span th:text="${recipe.yield}"></span> servings</p>
+    <p class="post-description" th:text="${recipe.content}"></p>
 
     <script href="../static/js/article.js"></script>
-</body>
-
+  </body>
 </html>

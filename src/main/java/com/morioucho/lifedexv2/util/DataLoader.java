@@ -79,6 +79,27 @@ public class DataLoader {
             recipe.setCreationDate(LocalDateTime.now());
             recipe.setLastModified(LocalDateTime.now());
 
+            ArrayList<String> ingredients = new ArrayList<>();
+            ingredients.add("Ingredient 1");
+            ingredients.add("Ingredient 2");
+            ingredients.add("Ingredient 3");
+            ingredients.add("Ingredient 4");
+            ingredients.add("Ingredient 5");
+            ingredients.add("Ingredient 6");
+            ingredients.add("Ingredient 7");
+            ingredients.add("Ingredient 8");
+            ingredients.add("Ingredient 9");
+            ingredients.add("Ingredient 10");
+
+            recipe.setContent(
+                    "Content Content Content Content Content Content " +
+                            "Content Content Content Content Content " +
+                            "Content Content Content Content Content " +
+                            "Content Content Content Content Content "
+            );
+
+            recipe.setIngredients(ingredients);
+
             recipes.add(recipe);
         }
     }
