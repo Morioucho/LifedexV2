@@ -6,6 +6,7 @@ import com.morioucho.lifedexv2.model.ViewStatistic;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +43,8 @@ public class DataLoader {
             post.setContent(fields[1]);
             post.setAuthorFirst(fields[2]);
             post.setAuthorLast(fields[3]);
+            post.setCreationDate(LocalDateTime.now());
+            post.setLastModified(LocalDateTime.now());
 
             posts.add(post);
         }
@@ -73,6 +76,8 @@ public class DataLoader {
             recipe.setCalories(Integer.parseInt(fields[6]));
             recipe.setCuisine(fields[7]);
             recipe.setYield(Integer.parseInt(fields[8]));
+            recipe.setCreationDate(LocalDateTime.now());
+            recipe.setLastModified(LocalDateTime.now());
 
             recipes.add(recipe);
         }
