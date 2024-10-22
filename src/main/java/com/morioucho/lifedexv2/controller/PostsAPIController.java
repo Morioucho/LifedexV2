@@ -1,6 +1,7 @@
 package com.morioucho.lifedexv2.controller;
 
 import com.morioucho.lifedexv2.model.Post;
+import com.morioucho.lifedexv2.model.Recipe;
 import com.morioucho.lifedexv2.service.PostService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -9,11 +10,10 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.stereotype.Controller;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -34,6 +34,29 @@ public class PostsAPIController {
         }
 
         return new ResponseEntity<>(postService.createPost(post), HttpStatus.OK);
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<Post>> getAllPosts() {
+        List<Post> posts = new ArrayList<>();
+        posts = postService.findAll();
+
+        if(posts.isEmpty()){
+            return new ResponseEntity<>(posts, HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(posts, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Post> findPost(@PathVariable long id){
+        Post found = postService.findByID(id);
+
+        if(found == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(found, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

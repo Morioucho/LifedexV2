@@ -8,12 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -34,6 +32,29 @@ public class RecipeAPIController {
         }
 
         return new ResponseEntity<>(recipeService.createRecipe(recipe), HttpStatus.CREATED);
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<Recipe>> getAllPosts() {
+        List<Recipe> recipies = new ArrayList<>();
+        recipies = recipeService.getAllRecipes();
+
+        if(recipies.isEmpty()){
+            return new ResponseEntity<>(recipies, HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(recipies, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Recipe> findRecipe(@PathVariable long id){
+        Recipe found = recipeService.findByID(id);
+
+        if(found == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(found, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
