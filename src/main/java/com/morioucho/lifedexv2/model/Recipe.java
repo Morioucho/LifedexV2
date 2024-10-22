@@ -1,5 +1,6 @@
 package com.morioucho.lifedexv2.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -28,6 +29,8 @@ public class Recipe {
     private List<String> ingredients;
 
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     private String authorFirst;
