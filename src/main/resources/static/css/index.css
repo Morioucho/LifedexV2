@@ -15,6 +15,11 @@ li, a, button {
     text-decoration: none;
 }
 
+.tagline {
+    text-align: center; 
+    padding: 30px 20%;
+}
+
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -194,7 +199,4 @@ button:hover {
     background: rgba(0,0,0,.75);
 }
 
-#tagline {
-    margin-left: auto;
-    margin-right: auto;
-}
+
