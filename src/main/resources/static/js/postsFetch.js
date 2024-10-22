@@ -78,5 +78,23 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error fetching article data:", error);
     }
   }
+  
+  async function articleSpecificDataFetch() {
+    try {
+      const response = await fetch("/api/posts/{id}", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const articleInfo = await response.json();
+
+        renderArticleInfo(articleInfo);
+  
+
+    } catch (error) {
+      console.error("Error fetching article data:", error);
+    }
+  }
+
   articleDataFetch();
+  articleSpecificDataFetch();
 });

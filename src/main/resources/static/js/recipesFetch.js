@@ -85,9 +85,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
   
       } catch (error) {
-        console.error("Error fetching article data:", error);
+        console.error("Error fetching recipe data:", error);
+      }
+    }
+
+    async function articleSpecificDataFetch() {
+      try {
+        const response = await fetch("/api/recipes", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const articleInfo = await response.json();
+  
+        renderArticleInfo(articleInfo);
+  
+      } catch (error) {
+        console.error("Error fetching recipe data:", error);
       }
     }
     articleDataFetch();
+    articleSpecificDataFetch();
   });
   
