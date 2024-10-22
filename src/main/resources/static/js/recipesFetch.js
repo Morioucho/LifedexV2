@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     async function articleDataFetch() {
       try {
-        const response = await fetch("/api/posts", {
+        const response = await fetch("/api/recipes", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
