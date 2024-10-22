@@ -8,12 +8,14 @@
 
   <body>
     <header>
-      <img
-        class="logo"
-        th:src="@{/images/LifeDexLogoSmall.png}"
-        width="120px"
-        alt="LifeDex Logo"
-      />
+      <a href="/index.html">
+        <img
+          class="logo"
+          th:src="@{/images/LifeDexLogoSmall.png}"
+          width="120px"
+          alt="LifeDex Logo"
+        />
+      </a>
 
       <nav>
         <ul class="nav_links">
@@ -35,7 +37,12 @@
       ></span>
     </p>
 
-    <img class="post-image" th:src="@{'/images/posts/' + ${post.id} + '.png'}" alt="Post Image" max-width="250px"/>
+    <img
+      class="post-image"
+      th:src="@{'/images/posts/' + ${post.id} + '.png'}"
+      alt="Post Image"
+      max-width="250px"
+    />
     <p th:text="${post.content}"></p>
 
     <script th:src="@{/js/article.js}"></script>
