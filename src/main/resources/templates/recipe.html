@@ -3,7 +3,7 @@
 
 <head>
     <title th:text="${recipe.title}"></title>
-    <link rel="stylesheet" th:href="@{/css/article.css}" />
+    <link rel="stylesheet" th:href="@{/css/recipesTemplate.css}" />
     <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
 </head>
 
@@ -23,7 +23,14 @@
     </header>
 
     <h1 th:text="${recipe.title}"></h1>
-    <img th:src="@{/images/article/recipe.png}" alt="Recipe Image" />
+    <p class="meta-info">
+      By <span th:text="${recipe.authorFirst}"></span>
+      &bull; Last modified on
+      <span
+        th:text="${#temporals.format(recipe.lastModified, 'MM-dd-yyyy HH:mm')}"
+      ></span>
+    </p>
+    <img class="post-image" th:src="@{'/images/recipes/' + ${recipe.id} + '.png'}" alt="Post Image"/>
     <p th:text="${recipe.content}"></p>
 
     <p>By <span th:text="${recipe.authorFirst}"></span> <span th:text="${recipe.authorLast}"></span></p>
@@ -32,18 +39,6 @@
     <p>Calories: <span th:text="${recipe.calories}"></span> kcal</p>
     <p>Cuisine: <span th:text="${recipe.cuisine}"></span></p>
     <p>Yield: <span th:text="${recipe.yield}"></span> servings</p>
-
-    <p>
-        Created on
-        <span th:text="${#dates.format(recipe.creationDate, 'yyyy-MM-dd HH:mm')}"></span>
-    </p>
-
-    <p>
-        Last modified on
-        <span th:text="${#dates.format(recipe.lastModified, 'yyyy-MM-dd HH:mm')}"></span>
-    </p>
-
-    <a href="/article" class="ParentRedirect">Back to Recipes</a>
 
     <script href="../static/js/article.js"></script>
 </body>
