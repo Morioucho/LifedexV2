@@ -1,7 +1,6 @@
 package com.morioucho.lifedexv2.controller;
 
 import com.morioucho.lifedexv2.model.Post;
-import com.morioucho.lifedexv2.model.Recipe;
 import com.morioucho.lifedexv2.service.PostService;
 
 import lombok.extern.slf4j.Slf4j;
