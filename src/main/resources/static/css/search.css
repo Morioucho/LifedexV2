@@ -137,3 +137,7 @@ button:hover {
 #search-results {
     text-align: center;
 }
+
+#article-title {
+    text-decoration: underline;
+}

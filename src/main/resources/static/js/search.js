@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderArticleInfo(article) {
     const articleInfoHtml = `
-      <a href="http://localhost:8080/posts/${article.id}">${article.title}</a><br>
+      <a href="http://localhost:8080/posts/${article.id}" id="article-title">${article.title}</a><br>
       ${article.image}<br>
       ${article.description}<br>
       ${article.author}<br>
