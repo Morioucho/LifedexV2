@@ -74,7 +74,7 @@ public class RecipeAPIController {
         List<Recipe> relevantRecipes = new ArrayList<>();
 
         for(Recipe recipe : recipeService.getAllRecipes()) {
-            if (recipe.getTitle().contains(query)) {
+            if (recipe.getTitle().toLowerCase().contains(query.toLowerCase())) {
                 relevantRecipes.add(recipe);
             }
         }

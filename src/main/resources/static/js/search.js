@@ -12,59 +12,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function queryFind(queryInput) {
     try {
-      const results = await fetch(`/api/posts/search?query=${encodeURIComponent(queryInput)}`, {
+      const resultsPost = await fetch(`/api/posts/search?query=${encodeURIComponent(queryInput)}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
-      const queryResults = await results.json();
-      console.log(queryResults);
-      // You can update the searchResults element with the results here
+      const queryResultsPost = await resultsPost.json();
+      console.log(queryResultsPost);
+      
+      const resultsRecipes = await fetch(`/api/recipes/search?query=${encodeURIComponent(queryInput)}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const queryResultsRecipes = await resultsRecipes.json();
+      console.log(queryResultsRecipes);
+      
+      // Clear previous results
+      searchResults.innerHTML = '';
+
+      // Render each article
+      queryResultsPost.forEach(article => {
+        renderArticleInfo(article);
+      });
+
+      // Render each article
+      queryResultsRecipes.forEach(article => {
+        renderArticleInfo(article);
+      });
+
     } catch (error) {
       console.log("Error fetching article data:", error);
     }
   }
+
   function renderArticleInfo(article) {
     const articleInfoHtml = `
-      ${article.title}<br>
+      <a href="http://localhost:8080/posts/${article.id}">${article.title}</a><br>
       ${article.image}<br>
       ${article.description}<br>
       ${article.author}<br>
       ${article.date}<br>
     `;
   
-  document.getElementById("search-results").innerHTML = articleInfoHtml;
+    // Append the article info to the searchResults element
+    searchResults.innerHTML += articleInfoHtml; // Use += to add to existing content
   }
-  renderArticleInfo(queryFind(queryInput));
-  
 });
-
-
-  /*
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const query = queryInput.value;
-
-    fetch(`/api/search?query=${encodeURIComponent(query)}`)
-      .then((response) => response.json())
-      .then((data) => {
-        searchResults.innerHTML = "";
-
-        if (data.length > 0) {
-          data.forEach((post) => {
-            const postElement = document.createElement("div");
-            
-            postElement.classList.add("post");
-            postElement.innerHTML = `
-                <h2>${post.title}</h2>
-                <p>${post.content}</p>
-              `;
-            searchResults.appendChild(postElement);
-          });
-        } else {
-          searchResults.innerHTML = "<p>No posts found</p>";
-        }
-      })
-      .catch((error) => console.error("Error fetching search results:", error));
-  }); 
-  */
-
