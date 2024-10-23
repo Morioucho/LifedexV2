@@ -71,4 +71,22 @@ public class PostsAPIController {
         log.error("The post with ID {} was not found.", id);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Post>> lookupPost(@RequestParam String query) {
+        List<Post> posts = new ArrayList<>();
+        posts = postService.findAll();
+
+        if(posts.isEmpty() || posts == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        
+        List<Post> relevantPosts = new ArrayList<>();
+        for(Post p : posts) {
+            if (p.getContent().contains(query)) {
+                relevantPosts.add(p);
+            }
+        }
+        return new ResponseEntity<>(relevantPosts, HttpStatus.OK);
+    }
 }
