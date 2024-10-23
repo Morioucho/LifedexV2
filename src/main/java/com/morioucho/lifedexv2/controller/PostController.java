@@ -37,7 +37,6 @@ public class PostController {
         Post found = postService.findByID(id);
 
         if(found != null) {
-            found.view();
             model.addAttribute("post", found);
             return "post";
         }

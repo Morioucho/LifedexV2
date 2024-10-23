@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Embedded;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,9 +19,6 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Embedded
-    private ViewStatistic viewStatistic;
-
     private String title;
 
     @Column(columnDefinition = "TEXT")
@@ -33,8 +29,4 @@ public class Post {
 
     private LocalDateTime creationDate;
     private LocalDateTime lastModified;
-
-    public void view(){
-        this.viewStatistic.view();
-    }
 }

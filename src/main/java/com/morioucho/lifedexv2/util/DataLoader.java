@@ -1,11 +1,19 @@
 package com.morioucho.lifedexv2.util;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.model.Recipe;
-import com.morioucho.lifedexv2.model.ViewStatistic;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.core.io.ClassPathResource;
+
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,84 +31,38 @@ public class DataLoader {
     }
 
     private void loadPosts() {
-        String[] postStrings = {
-                "Post Title 1,This is the content of post 1,John,Doe",
-                "Post Title 2,This is the content of post 2,Jane,Smith",
-                "Post Title 3,This is the content of post 3,Bob,Brown"
-        };
+        try {
+            ClassPathResource resource = new ClassPathResource("data/posts.json");
+            Reader reader = new InputStreamReader(resource.getInputStream());
 
-        for (String postString : postStrings) {
-            String[] fields = postString.split(",");
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                    .create();
 
-            if (fields.length < 4) {
-                log.error("One of the lines doesn't contain enough details.");
-                continue;
-            }
+            Type postListType = new TypeToken<List<Post>>() {}.getType();
+            List<Post> postList = gson.fromJson(reader, postListType);
+            posts.addAll(postList);
 
-            Post post = new Post();
-            post.setViewStatistic(new ViewStatistic());
-            post.setTitle(fields[0]);
-            post.setContent(fields[1]);
-            post.setAuthorFirst(fields[2]);
-            post.setAuthorLast(fields[3]);
-            post.setCreationDate(LocalDateTime.now());
-            post.setLastModified(LocalDateTime.now());
-
-            posts.add(post);
+        } catch (Exception exception) {
+            log.error("Error loading posts: " + exception.getMessage());
         }
     }
 
     private void loadRecipes() {
-        String[] recipeStrings = {
-                "Recipe Title 1,Description of recipe 1,Chef A,LastName A,Step 1; Step 2; Step 3,30,200,Italian,4",
-                "Recipe Title 2,Description of recipe 2,Chef B,LastName B,Step 1; Step 2; Step 3,45,300,Mexican,2",
-                "Recipe Title 3,Description of recipe 3,Chef C,LastName C,Step 1; Step 2; Step 3,60,150,Indian,3"
-        };
+        try {
+            ClassPathResource resource = new ClassPathResource("data/recipes.json");
+            Reader reader = new InputStreamReader(resource.getInputStream());
 
-        for (String recipeString : recipeStrings) {
-            String[] fields = recipeString.split(",");
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                    .create();
 
-            if (fields.length < 9) {
-                log.error("One of the lines does not contain enough details.");
-                continue;
-            }
+            Type recipeListType = new TypeToken<List<Recipe>>() {}.getType();
+            List<Recipe> recipeList = gson.fromJson(reader, recipeListType);
+            recipes.addAll(recipeList);
 
-            Recipe recipe = new Recipe();
-            recipe.setViewStatistic(new ViewStatistic());
-            recipe.setTitle(fields[0]);
-            recipe.setContent(fields[1]);
-            recipe.setAuthorFirst(fields[2]);
-            recipe.setAuthorLast(fields[3]);
-            recipe.setSteps(fields[4]);
-            recipe.setCookTime(Integer.parseInt(fields[5]));
-            recipe.setCalories(Integer.parseInt(fields[6]));
-            recipe.setCuisine(fields[7]);
-            recipe.setYield(Integer.parseInt(fields[8]));
-            recipe.setCreationDate(LocalDateTime.now());
-            recipe.setLastModified(LocalDateTime.now());
-
-            ArrayList<String> ingredients = new ArrayList<>();
-            ingredients.add("Ingredient 1");
-            ingredients.add("Ingredient 2");
-            ingredients.add("Ingredient 3");
-            ingredients.add("Ingredient 4");
-            ingredients.add("Ingredient 5");
-            ingredients.add("Ingredient 6");
-            ingredients.add("Ingredient 7");
-            ingredients.add("Ingredient 8");
-            ingredients.add("Ingredient 9");
-            ingredients.add("Ingredient 10");
-
-            recipe.setContent(
-                    "Content Content Content Content Content Content " +
-                            "Content Content Content Content Content " +
-                            "Content Content Content Content Content " +
-                            "Content Content Content Content Content "
-            );
-
-            recipe.setIngredients(ingredients);
-
-            recipes.add(recipe);
+        } catch (Exception exception) {
+            log.error("Error loading recipes: {}", exception.getMessage());
         }
     }
 

@@ -2,7 +2,6 @@ package com.morioucho.lifedexv2.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,9 +20,6 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Embedded
-    private ViewStatistic viewStatistic;
 
     @ElementCollection
     private List<String> ingredients;
@@ -44,8 +40,4 @@ public class Recipe {
     private int calories;
     private String cuisine;
     private int yield;
-
-    public void view(){
-        this.viewStatistic.view();
-    }
 }

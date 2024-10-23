@@ -10,6 +10,7 @@ import java.time.ZonedDateTime;
 
 @Getter
 @Setter
+@Deprecated
 public class ViewStatistic {
     private long allTimeViews;
     private long weeklyViews;
