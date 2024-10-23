@@ -46,11 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderArticleInfo(article) {
     const articleInfoHtml = `
-      <a href="http://localhost:8080/posts/${article.id}" id="article-title">${article.title}</a><br>
-      ${article.image}<br>
-      ${article.description}<br>
-      ${article.author}<br>
-      ${article.date}<br>
+      <a href="http://localhost:8080/posts/${article.id}" id="article-title">${article.title}</a> by 
+      ${article.authorFirst} 
+      ${article.authorLast} <br>
+      Last Modified ${article.lastModified}<br>
     `;
   
     // Append the article info to the searchResults element
