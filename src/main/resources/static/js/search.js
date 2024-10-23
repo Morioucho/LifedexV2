@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Error fetching article data:", error);
     }
   }
-  function renderArticleInfo(article, elementId) {
+  function renderArticleInfo(article) {
     const articleInfoHtml = `
       ${article.title}<br>
       ${article.image}<br>
@@ -31,9 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ${article.author}<br>
       ${article.date}<br>
     `;
+  
+  document.getElementById("search-results").innerHTML = articleInfoHtml;
   }
-  searchResults.innerHTML = articleInfoHtml;
-  renderArticleInfo(queryResults);
+  renderArticleInfo(queryFind(queryInput));
+  
 });
 
 
