@@ -75,9 +75,9 @@ public class PostsAPIController {
     @GetMapping("/search")
     public ResponseEntity<List<Post>> lookupPost(@RequestParam String query) {
         List<Post> relevantPosts = new ArrayList<>();
-
+        log.info(query);
         for(Post post : postService.findAll()) {
-            if (post.getTitle().contains(query)) {
+            if (post.getTitle().toLowerCase().contains(query.toLowerCase())) {
                 relevantPosts.add(post);
             }
         }
