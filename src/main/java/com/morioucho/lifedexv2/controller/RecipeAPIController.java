@@ -68,4 +68,17 @@ public class RecipeAPIController {
         recipeService.deleteRecipe(id);
         return new ResponseEntity<>("Successfully deleted the Recipe with ID " + id + ".", HttpStatus.OK);
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Recipe>> lookupRecipe(@RequestParam String query) {
+        List<Recipe> relevantRecipes = new ArrayList<>();
+
+        for(Recipe recipe : recipeService.getAllRecipes()) {
+            if (recipe.getTitle().contains(query)) {
+                relevantRecipes.add(recipe);
+            }
+        }
+
+        return new ResponseEntity<>(relevantRecipes, HttpStatus.OK);
+    }
 }

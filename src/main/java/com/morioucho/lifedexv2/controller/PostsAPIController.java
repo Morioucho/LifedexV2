@@ -4,9 +4,9 @@ import com.morioucho.lifedexv2.model.Post;
 import com.morioucho.lifedexv2.service.PostService;
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.*;
@@ -74,19 +74,14 @@ public class PostsAPIController {
 
     @GetMapping("/search")
     public ResponseEntity<List<Post>> lookupPost(@RequestParam String query) {
-        List<Post> posts = new ArrayList<>();
-        posts = postService.findAll();
-
-        if(posts.isEmpty() || posts == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        
         List<Post> relevantPosts = new ArrayList<>();
-        for(Post p : posts) {
-            if (p.getContent().contains(query)) {
-                relevantPosts.add(p);
+
+        for(Post post : postService.findAll()) {
+            if (post.getTitle().contains(query)) {
+                relevantPosts.add(post);
             }
         }
+
         return new ResponseEntity<>(relevantPosts, HttpStatus.OK);
     }
 }
