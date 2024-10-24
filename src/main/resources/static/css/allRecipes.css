@@ -19,7 +19,7 @@ h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 75px;
-    padding: 50px 20% 8px 20%;
+    padding: 50px 20%;
     color: #ffffff;
     text-align: center;
 }
@@ -37,20 +37,18 @@ header {
 }
 
 nav {
-    display: flex;
     flex-grow: 1;
-    justify-content: center; /* Center the navigation links */
 }
 
 .nav_links {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center the navigation links */
+    justify-content: center;
     margin: 0;
 }
 
 .nav_links li {
-    margin: 0 20px; /* Space between links */
+    margin: 0 20px;
 }
 
 .nav_links li a {
@@ -59,11 +57,11 @@ nav {
 }
 
 .nav_links li a:hover {
-    color: #114d1e; /* Change color on hover */
+    color: #114d1e;
 }
 
 .cta {
-    margin-left: 20px; /* Space between nav links and the CTA button */
+    margin-left: 20px;
 }
 
 .cta button {

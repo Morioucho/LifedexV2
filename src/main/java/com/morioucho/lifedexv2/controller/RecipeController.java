@@ -40,7 +40,7 @@ public class RecipeController {
         Recipe found = recipeService.findByID(id);
 
         if(found != null) {
-            model.addAttribute("recipes", found);
+            model.addAttribute("recipe", found);
             return "recipe";
         }
 

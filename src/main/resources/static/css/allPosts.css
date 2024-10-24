@@ -148,6 +148,21 @@ ul {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .nav_links li {
+        margin: 5px 0;
+    }
+
     .post-item {
         flex-direction: column;
         align-items: center;
@@ -161,15 +176,5 @@ ul {
     .post-content {
         max-width: 100%;
         text-align: center;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav_links {
-        justify-content: flex-start;
-        margin-bottom: 10px;
     }
 }
