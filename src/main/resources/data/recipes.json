@@ -121,5 +121,109 @@
     "calories": 250,
     "cuisine": "American",
     "yield": 1
+  },
+  {
+    "id": 6,
+    "title": "Grilled Cheese Sandwich",
+    "content": "As a classic dish enjoyed by almost anyone in the world, the grilled cheese sandwich is as simple to make as its name. Composed of only bread, cheese, and butter, this is a simple yet delicious food that anyone can enjoy.",
+    "authorFirst": "Jack",
+    "authorLast": "Russell",
+    "creationDate": "2023-09-12T11:00:00",
+    "lastModified": "2023-10-01T09:30:00",
+    "viewStatistic": { "views": 1223 },
+    "ingredients": [
+      "bread",
+      "cheese",
+      "butter"
+    ],
+    "steps": "1. Preheat your pan on the stove to a low heat. 2. Spead butter on all sides of your two slices of bread. 3. Place one slice of bread on the pan and cover with a cheese slice. 4. When the bread slice is toasted, place the other on top and flip. 5. Remove the sandwich when the other slice is toasted and serve.",
+    "cookTime": 15,
+    "calories": 200,
+    "cuisine": "American",
+    "yield": 1
+  },
+  {
+    "id": 7,
+    "title": "Omelette",
+    "content": "This dish is the dream of any egg lovers out there. With culinary variety of options that can come about from the flexibility of an omelette, the delicious opportunities are countless. You won't be disappointed with this breakfast classic.",
+    "authorFirst": "Ava",
+    "authorLast": "Malik",
+    "creationDate": "2023-11-22T11:00:00",
+    "lastModified": "2023-12-11T09:30:00",
+    "viewStatistic": { "views": 501 },
+    "ingredients": [
+      "eggs",
+      "cheese",
+      "sausages",
+      "onions",
+      "bell peppers"
+    ],
+    "steps": "1. Preheat your pan on the stove to a medium heat. 2. Crack your eggs and place them in the pan. 3. When the eggs are halfway cooked, add the sausages, cheese, onions, and bell peppers. 4. Mix the omelette up until the eggs are fully cooked. 5. Plate and serve.",
+    "cookTime": 45,
+    "calories": 400,
+    "cuisine": "American",
+    "yield": 3
+  },
+  {
+    "id": 8,
+    "title": "Spam Musubi",
+    "content": "Spam Musubi is a dish with roots in Hawaiian culture. With the Spam meat as its base, it is best described as a larger version of sushi with Spam instead of raw fish. This is a delicious treat you can keep with you as you travel.",
+    "authorFirst": "Miku",
+    "authorLast": "Tanaka",
+    "creationDate": "2023-09-12T11:00:00",
+    "lastModified": "2023-10-01T09:30:00",
+    "viewStatistic": { "views": 552 },
+    "ingredients": [
+      "rice",
+      "seaweed",
+      "spam"
+    ],
+    "steps": "1. Cook your spam until you see the golden crusting. 2. Lay out a strip of seaweed and press rice on top of it. 3. Place the spam on the rice and wrap. 4. Press the layers together for cohesion. 5. Serve or store. ",
+    "cookTime": 30,
+    "calories": 250,
+    "cuisine": "Hawaiian",
+    "yield": 1
+  },
+  {
+    "id": 9,
+    "title": "Potstickers",
+    "content": "Potsticks are a classic Chinese dish that is a wrapping that encases a savory filling. As a representation of wealth, the potsticker is an essential dish to have to display Chinese cuisine, and it is simple to make.",
+    "authorFirst": "Zhu",
+    "authorLast": "Hongwu",
+    "creationDate": "2023-03-30T11:00:00",
+    "lastModified": "2023-04-22T09:30:00",
+    "viewStatistic": { "views": 378 },
+    "ingredients": [
+      "oil",
+      "water",
+      "potstickers"
+    ],
+    "steps": "1. Place a small amount of oil and water in a pan. 2. Place your frozen potstickers in the pan. 3. Turn on the stove let the potstickers boil. 4. Once the water evaporates, move the potstickers around while they fry so they do not stick to the bottom. 5. When the potstickers are golden brown, remove and serve.",
+    "cookTime": 15,
+    "calories": 300,
+    "cuisine": "Chinese",
+    "yield": 1
+  },
+  {
+    "id": 10,
+    "title": "Fettuccine Alfredo",
+    "content": "Fettuccine Alfredo is a classic Italian pasta dish that combines a delectable cream sauce with fettuccine. Almost universally enjoyed, you will have a great time eating this dish, and you will love the taste and results.",
+    "authorFirst": "Tonio",
+    "authorLast": "Trussardi",
+    "creationDate": "1999-05-11T11:00:00",
+    "lastModified": "1999-05-22T09:30:00",
+    "viewStatistic": { "views": 855 },
+    "ingredients": [
+      "fettuccine",
+      "butter",
+      "cheese",
+      "cream",
+      "seasonings"
+    ],
+    "steps": "1. Boil your fettuccine in water. 2. Pour your milk and cream into a pot on low heat. 3. Melt butter and cheese into a cream and milk mixture, adding your seasonings. 4. Place the pasta in the sauce and mix thoroughly. 5. Plate and serve.",
+    "cookTime": 15,
+    "calories": 595,
+    "cuisine": "Italian",
+    "yield": 6
   }
 ]
