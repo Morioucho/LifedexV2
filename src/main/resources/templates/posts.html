@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Posts</title>
+    <link rel="stylesheet" th:href="@{/css/allPosts.css}" />
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
+</head>
+
+<body>
+<header>
+    <a href="/index.html">
+        <img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
+    </a>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/posts.html">Posts</a></li>
+            <li><a href="/recipes.html">Recipes</a></li>
+        </ul>
+    </nav>
+    <a class="cta" href="/search.html"><button>Search</button></a>
+</header>
+
+<h1>Posts</h1>
+
+<div class="posts-container">
+    <ul>
+        <li th:each="post : ${posts}" class="post-item">
+            <div class="post-image">
+                <img th:src="@{/images/Shrugging.png}" alt="Post Image" />
+            </div>
+
+            <div class="post-content">
+                <h2>
+                    <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}"></a>
+                </h2>
+                <p th:text="${post.content}"></p>
+                <p>
+                    By <span th:text="${post.authorFirst}"></span>
+                    <span th:text="${post.authorLast}"></span>
+                </p>
+                <p>
+                    Created on 
+                    <span th:if="${post.creationDate != null}" 
+                          th:text="${#temporals.format(post.creationDate, 'MM-dd-yyyy HH:mm')}"></span>
+                    <span th:if="${post.creationDate == null}">Date not available</span>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script th:src="@{/js/postsFetch.js}"></script>
+</body>
+</html>

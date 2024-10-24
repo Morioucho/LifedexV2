@@ -29,7 +29,7 @@ public class PostController {
         List<Post> found = postService.findAll();
         model.addAttribute("posts", found);
 
-        return "post";
+        return "posts";
     }
 
     @GetMapping("/{id}")

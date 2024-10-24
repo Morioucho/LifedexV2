@@ -16,7 +16,7 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping(("/recipes"))
+@RequestMapping("/recipes")
 public class RecipeController {
     private final RecipeService recipeService;
 
@@ -27,9 +27,12 @@ public class RecipeController {
     @GetMapping
     public String getAllRecipes(Model model) {
         List<Recipe> found = recipeService.getAllRecipes();
+        for(Recipe recipe : found) {
+            log.info(recipe.getTitle());
+        }
         model.addAttribute("recipe", found);
 
-        return "recipe";
+        return "recipes";
     }
 
     @GetMapping("/{id}")
