@@ -19,7 +19,7 @@ h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 75px;
-    padding: 50px 20% 8px 20%;
+    padding: 50px 20%;
     color: #ffffff;
     text-align: center;
 }
@@ -30,6 +30,50 @@ header {
     align-items: center;
     padding: 30px 20%;
     background-color: #111111;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.nav_links li {
+    margin: 0 20px;
+}
+
+.nav_links li a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav_links li a:hover {
+    color: #114d1e;
+}
+
+.cta button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: #ffffff;
+    color: #111111;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta button:hover {
+    background-color: #02441d;
+    color: #ffffff;
 }
 
 .posts-container {
@@ -117,5 +161,15 @@ ul {
     .post-content {
         max-width: 100%;
         text-align: center;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav_links {
+        justify-content: flex-start;
+        margin-bottom: 10px;
     }
 }

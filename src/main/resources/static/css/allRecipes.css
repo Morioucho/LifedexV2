@@ -32,6 +32,56 @@ header {
     background-color: #111111;
 }
 
+.logo {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center; /* Center the navigation links */
+}
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    margin: 0;
+}
+
+.nav_links li {
+    margin: 0 20px; /* Space between links */
+}
+
+.nav_links li a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav_links li a:hover {
+    color: #114d1e; /* Change color on hover */
+}
+
+.cta {
+    margin-left: 20px; /* Space between nav links and the CTA button */
+}
+
+.cta button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: #ffffff;
+    color: #111111;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta button:hover {
+    background-color: #02441d;
+    color: #ffffff;
+}
+
 .recipes-container {
     display: flex;
     flex-direction: column;
@@ -104,6 +154,20 @@ ul {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .nav_links li {
+        margin: 5px 0;
+    }
+
     .recipe-item {
         flex-direction: column;
         align-items: center;
