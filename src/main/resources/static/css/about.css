@@ -121,6 +121,14 @@ button:hover {
     text-align: center;
 }
 
+.aboutparagraph{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
 #tagline {
     margin-left: auto;
     margin-right: auto;
