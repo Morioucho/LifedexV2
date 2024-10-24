@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Posts</title>
-    <link rel="stylesheet" th:href="@{/css/allPosts.css}" />
-    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
+    <link rel="stylesheet" th:href="@{/css/allPosts.css}"/>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
 </head>
 
 <body>
 <header>
     <a href="/index.html">
-        <img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo" />
+        <img class="logo" th:src="@{/images/LifeDexLogoSmall.png}" width="120px" alt="LifeDex Logo"/>
     </a>
     <nav>
         <ul class="nav_links">
@@ -18,7 +18,9 @@
             <li><a href="/recipes">Recipes</a></li>
         </ul>
     </nav>
-    <a class="cta" href="/search.html"><button>Search</button></a>
+    <a class="cta" href="/search.html">
+        <button>Search</button>
+    </a>
 </header>
 
 <h1>Posts</h1>
@@ -27,7 +29,7 @@
     <ul>
         <li th:each="post : ${posts}" class="post-item">
             <div class="post-image">
-                <img th:src="@{/images/Shrugging.png}" alt="Post Image" />
+                <img th:src="${post.imageURL}" th:alt="${post.imageCaption}"/>
             </div>
 
             <div class="post-content">
@@ -40,8 +42,8 @@
                     <span th:text="${post.authorLast}"></span>
                 </p>
                 <p>
-                    Created on 
-                    <span th:if="${post.creationDate != null}" 
+                    Created on
+                    <span th:if="${post.creationDate != null}"
                           th:text="${#temporals.format(post.creationDate, 'MM-dd-yyyy HH:mm')}"></span>
                     <span th:if="${post.creationDate == null}">Date not available</span>
                 </p>

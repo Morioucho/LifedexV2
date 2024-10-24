@@ -33,6 +33,10 @@ public class Post {
     @Column(length = 255)
     private String authorLast;
 
+    @Column(length = 500)
+    private String imageURL;
+    private String imageCaption;
+
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime creationDate;

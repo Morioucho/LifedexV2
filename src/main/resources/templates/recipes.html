@@ -2,66 +2,68 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Recipes</title>
-    <link rel="stylesheet" th:href="@{/css/allRecipes.css}" />
-    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
+    <link rel="stylesheet" th:href="@{/css/allRecipes.css}"/>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
 </head>
 
 <body>
-    <header>
-        <a href="/index.html">
-            <img
+<header>
+    <a href="/index.html">
+        <img
                 class="logo"
                 th:src="@{/images/LifeDexLogoSmall.png}"
                 width="120px"
                 alt="LifeDex Logo"
-            />
-        </a>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/recipes">Recipes</a></li>
-            </ul>
-        </nav>
-        <a class="cta" href="/search.html"><button>Search</button></a>
-    </header>
-
-    <h1>Recipes</h1>
-
-    <div class="recipes-container">
-        <ul>
-            <li th:each="recipe : ${recipes}" class="recipe-item">
-                <div class="recipe-image">
-                    <img th:src="@{/images/Shrugging.png}" alt="Recipe Image" />
-                </div>
-
-                <div class="recipe-content">
-                    <h2>
-                        <a th:href="@{/recipes/{id}(id=${recipe.id})}" th:text="${recipe.title}"></a>
-                    </h2>
-                    <p th:text="${recipe.content}"></p>
-                    <p>
-                        By <span th:text="${recipe.authorFirst}"></span>
-                        <span th:text="${recipe.authorLast}"></span>
-                    </p>
-                    <p>
-                        Created on
-                        <span th:if="${recipe.creationDate != null}"
-                              th:text="${#temporals.format(recipe.creationDate, 'MM-dd-yyyy HH:mm')}"></span>
-                        <span th:if="${recipe.creationDate == null}">Date not available</span>
-                    </p>
-                    <p>
-                        Cook Time:
-                        <span th:text="${recipe.cookTime} + ' minutes'"></span> |
-                        Calories: <span th:text="${recipe.calories}"></span> |
-                        Cuisine: <span th:text="${recipe.cuisine}"></span> |
-                        Yield: <span th:text="${recipe.yield}"></span> servings
-                    </p>
-                </div>
-            </li>
+        />
+    </a>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/posts">Posts</a></li>
+            <li><a href="/recipes">Recipes</a></li>
         </ul>
-    </div>
+    </nav>
+    <a class="cta" href="/search.html">
+        <button>Search</button>
+    </a>
+</header>
 
-    <script th:src="@{/js/recipesFetch.js}"></script>
+<h1>Recipes</h1>
+
+<div class="recipes-container">
+    <ul>
+        <li th:each="recipe : ${recipes}" class="recipe-item">
+            <div class="recipe-image">
+                <img th:src="${recipe.imageURL}" th:alt="${recipe.imageCaption}"/>
+            </div>
+
+            <div class="recipe-content">
+                <h2>
+                    <a th:href="@{/recipes/{id}(id=${recipe.id})}" th:text="${recipe.title}"></a>
+                </h2>
+                <p th:text="${recipe.content}"></p>
+                <p>
+                    By <span th:text="${recipe.authorFirst}"></span>
+                    <span th:text="${recipe.authorLast}"></span>
+                </p>
+                <p>
+                    Created on
+                    <span th:if="${recipe.creationDate != null}"
+                          th:text="${#temporals.format(recipe.creationDate, 'MM-dd-yyyy HH:mm')}"></span>
+                    <span th:if="${recipe.creationDate == null}">Date not available</span>
+                </p>
+                <p>
+                    Cook Time:
+                    <span th:text="${recipe.cookTime} + ' minutes'"></span> |
+                    Calories: <span th:text="${recipe.calories}"></span> |
+                    Cuisine: <span th:text="${recipe.cuisine}"></span> |
+                    Yield: <span th:text="${recipe.yield}"></span> servings
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script th:src="@{/js/recipesFetch.js}"></script>
 </body>
 </html>

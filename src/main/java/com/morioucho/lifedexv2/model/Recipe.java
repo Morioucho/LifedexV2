@@ -27,6 +27,10 @@ public class Recipe {
     @Column(length = 255)
     private String authorLast;
 
+    @Column(length = 500)
+    private String imageURL;
+    private String imageCaption;
+
     private LocalDateTime creationDate;
     private LocalDateTime lastModified;
 
