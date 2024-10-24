@@ -49,18 +49,18 @@ document.addEventListener("DOMContentLoaded", function () {
       this.date = date;
     }
   }
-/*
-  function renderArticleInfo(article, elementId) {
-    const articleInfoHtml = `
-      ${article.title}<br>
-      ${article.image}<br>
-      ${article.description}<br>
-      ${article.author}<br>
-      ${article.date}<br>
-    `;
-    
-    document.getElementById(elementId).innerHTML = articleInfoHtml;
-  } */
+  /*
+    function renderArticleInfo(article, elementId) {
+      const articleInfoHtml = `
+        ${article.title}<br>
+        ${article.image}<br>
+        ${article.description}<br>
+        ${article.author}<br>
+        ${article.date}<br>
+      `;
+      
+      document.getElementById(elementId).innerHTML = articleInfoHtml;
+    } */
 
   async function articleDataFetch() {
     try {
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error fetching article data:", error);
     }
   }
-  
+
   async function articleSpecificDataFetch() {
     try {
       const response = await fetch("/api/posts/1", {
@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       const articleInfo = await response.json();
 
-        /* renderArticleInfo(articleInfo); */
-        console.log(articleInfo);
+      /* renderArticleInfo(articleInfo); */
+      console.log(articleInfo);
 
     } catch (error) {
       console.error("Error fetching article data:", error);

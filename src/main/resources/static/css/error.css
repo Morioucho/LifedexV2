@@ -7,7 +7,9 @@
     background-color: #111111;
 }
 
-li, a, button {
+li,
+a,
+button {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 16px;

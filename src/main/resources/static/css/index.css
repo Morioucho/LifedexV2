@@ -7,7 +7,9 @@
     background-color: #111111;
 }
 
-li, a, button {
+li,
+a,
+button {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -16,7 +18,7 @@ li, a, button {
 }
 
 .tagline {
-    text-align: center; 
+    text-align: center;
     padding: 30px 20%;
 }
 
@@ -126,39 +128,39 @@ button:hover {
     text-align: center;
 }
 
-.carousel{
-    position:   relative;
+.carousel {
+    position: relative;
     height: 600px;
     width: 80%;
     margin: 0 auto;
 }
 
-.carousel__image{
+.carousel__image {
     width: 100%;
-    height:100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.carousel__track-container{
+.carousel__track-container {
     background: #1c6000;
     height: 100%;
     position: relative;
 }
 
-.carousel__track{
+.carousel__track {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.carousel__slide{
+.carousel__slide {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
 }
 
-.carousel__button{
+.carousel__button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -167,36 +169,34 @@ button:hover {
     cursor: pointer;
 }
 
-.carousel__button--left{
+.carousel__button--left {
     left: -40px;
 }
 
-.carousel__button--right{
+.carousel__button--right {
     right: -40px;
 }
 
 
-.carousel__button img{
+.carousel__button img {
     width: 12px;
 }
 
-.carousel__nav{
+.carousel__nav {
     display: flex;
     justify-content: center;
     padding: 10px 0;
 }
 
-.carousel__indicator{
+.carousel__indicator {
     border: 0;
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, .3);
     margin: 0 12px;
 }
 
-.carousel__indicator.current-slide{
-    background: rgba(0,0,0,.75);
+.carousel__indicator.current-slide {
+    background: rgba(0, 0, 0, .75);
 }
-
-
