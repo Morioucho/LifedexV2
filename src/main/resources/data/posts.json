@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "The Importance of Sustainable Living",
-    "content": "Sustainable living is a lifestyle that aims to reduce one's environmental impact by making changes to transportation, energy consumption, and diet. As global temperatures continue to rise, sustainable practices have become more important than ever. From reducing single-use plastics to choosing renewable energy sources, individuals can make a significant impact on the health of the planet. Educating others about these practices can also play a pivotal role in shifting societal norms towards a greener future.",
+    "title": "The Guide to Mopping Floors",
+    "content": "Mopping floors is a relatively easy task. Only a couple supplies are needed such as a mop, floor cleaner, brrom, vacuum, dustpan, and water. In order to begin mopping, the area needs to be clean first. After all furniture or obstacles are removed from the floor, thoroughly sweep or vacuum the floor to remove dust and dirt. The dustpan should be used to collect bigger pieces of debree. Fill the mop bucket with hot water and the appropriate amount of floor cleaner to the water. After it is mixed, dip the mop into the cleaning solution and wring out excess liquid. Once ready, start with once corner of the room and work towards the exit in order to avoid stepping on wet areas. Rinse the mop frequently in order to avoid spreading dirt. If needed, change the water in the bucket and repeat the mopping process with plain water. Once mopping is completed, let the floor airdry and avoid walking on it. Finally, place back all furniture and store your supplies.",
     "authorFirst": "John",
     "authorLast": "Doe",
     "creationDate": "2023-05-01T14:30:00",
@@ -10,8 +10,8 @@
   },
   {
     "id": 2,
-    "title": "Exploring the Future of Artificial Intelligence",
-    "content": "Artificial Intelligence (AI) has been rapidly evolving over the past decade. With advancements in machine learning and neural networks, AI is now capable of completing tasks that once required human intelligence. From healthcare to finance, AI is being implemented across a range of industries, enhancing productivity and decision-making. However, ethical concerns about job displacement and the control of AI must be addressed as the technology continues to advance.",
+    "title": "The Guide to Washing Dishes",
+    "content": "Washing dishes may seem like a long and grueling task, however, it is fairly easy. Firstly, you will need your dish soap, sponge or dishcloth, a dish rack, and warm water. If needed, rinse off any large food particles to prevent the water from getting dirty too quickly. If your kitchen has a double sink, fill one side with warm water and add dish soap, if not, then this step is not necessary. Now to begin cleaning. It is advised to start with the least dirty items such as utensils and glasses. Use your sponge or cloth to clean them thoroughly and focus on any residue spots. Rinse each item under running water until all soap is removed. After cleaning all the dishes, place them on a drying mat or dish rack. Once all dishes are washed empty any dirty water from the sink, rinse out the sponge until it’s dry, and wipe down the sink.",
     "authorFirst": "Jane",
     "authorLast": "Smith",
     "creationDate": "2023-06-12T11:15:00",
@@ -19,8 +19,8 @@
   },
   {
     "id": 3,
-    "title": "Healthy Eating for a Busy Lifestyle",
-    "content": "Maintaining a healthy diet can be challenging, especially when balancing a busy schedule. However, making small adjustments can have long-term benefits. Preparing meals in advance, choosing whole foods, and avoiding processed snacks are a few ways to ensure proper nutrition. Additionally, staying hydrated and prioritizing fruits and vegetables in your diet can help maintain energy levels throughout the day.",
+    "title": "The Guide to Grocery Shopping",
+    "content": "Grocery shopping at first glance is really overwhelming and you may end up spending more than you should. This guide will provide a brief and simple way to stay on task and potentially save money. Firstly, it is important to decide what meals to prepare for the week. It is not advisable to just buy random ingredients without knowing what to cook. List the ingredients needed in order to cook your desired meal. Once complete, organize your list by categories such as produce, dairy, meats, etc. It is important to shop during off-peak hours in order to have a relaxed experience and to avoid crowds. Another way to save money is to bring reusable grocery bags. While shopping, focus on your list and avoid impulse buys. Place heavier items on the bottom and more lightweight items near the top to prevent damage. Finally, double check your list to make sure you did not miss anything.",
     "authorFirst": "Emily",
     "authorLast": "Johnson",
     "creationDate": "2023-07-03T08:50:00",
@@ -28,8 +28,8 @@
   },
   {
     "id": 4,
-    "title": "The Evolution of Video Game Graphics",
-    "content": "Over the past few decades, video game graphics have evolved from simple 2D sprites to hyper-realistic 3D environments. Advances in GPU technology and rendering techniques have allowed game developers to push the boundaries of visual fidelity. Games like The Last of Us, Red Dead Redemption 2, and Cyberpunk 2077 showcase just how far game graphics have come, creating immersive worlds that feel almost lifelike.",
+    "title": "The Guide to Communication",
+    "content": "Effective communication involves active listening, clear expression, and empathy. Start by giving your full attention to the speaker, making eye contact, and nodding to show understanding. Use simple, concise language to convey your thoughts, and ask open-ended questions to encourage dialogue. Be aware of nonverbal cues, such as body language and tone, as they can significantly impact your message. Finally, practice empathy by considering the other person’s perspective, which fosters a more meaningful and respectful exchange.",
     "authorFirst": "Michael",
     "authorLast": "Brown",
     "creationDate": "2023-08-15T16:00:00",
@@ -37,8 +37,8 @@
   },
   {
     "id": 5,
-    "title": "Climate Change and Its Impact on Wildlife",
-    "content": "Climate change is affecting ecosystems around the world. Rising temperatures, changing precipitation patterns, and more frequent extreme weather events are all impacting wildlife. Some species are struggling to adapt to their rapidly changing environments, leading to population declines or even extinction. Conservation efforts are more critical than ever to protect vulnerable species and preserve biodiversity for future generations.",
+    "title": "The Guide to Doing Laundry",
+    "content": "To do laundry, start by sorting your clothes into separate piles based on color (whites, darks, and delicates). Check the care labels for specific washing instructions. Load the washing machine with the appropriate amount of clothes, add detergent, and select the right wash cycle for the fabric type. After washing, transfer the clothes to the dryer or hang them to air dry, depending on the care instructions. Once dry, fold or hang the items promptly to avoid wrinkles. Finally, put everything away neatly.",
     "authorFirst": "Sophia",
     "authorLast": "Williams",
     "creationDate": "2023-09-10T13:20:00",
@@ -46,8 +46,8 @@
   },
   {
     "id": 6,
-    "title": "The Rise of Remote Work: Challenges and Opportunities",
-    "content": "Remote work has become increasingly common, especially after the global pandemic. While working from home offers flexibility and convenience, it also presents challenges such as maintaining work-life balance and staying productive. Companies are now exploring hybrid models, combining remote work with in-office days to find the right balance. For many, remote work represents a permanent shift in how businesses operate, offering new opportunities for workers and employers alike.",
+    "title": "The Guide on How to Make Your Bed",
+    "content": "To make your bed, start by removing any pillows and blankets from the surface. Straighten the mattress pad if needed, then place the fitted sheet over the mattress, ensuring it's secure at the corners. Lay the flat sheet on top, with the finished side facing down, and tuck it in at the foot and sides. Add your comforter or duvet, folding it down slightly at the top. Finally, arrange your pillows at the head of the bed, fluffing them for a neat appearance, and add any decorative cushions if desired.",
     "authorFirst": "David",
     "authorLast": "Jones",
     "creationDate": "2023-10-02T09:10:00",
@@ -55,8 +55,8 @@
   },
   {
     "id": 7,
-    "title": "The Benefits of Mindfulness Meditation",
-    "content": "Mindfulness meditation has been shown to reduce stress, improve focus, and increase overall well-being. By bringing attention to the present moment and observing thoughts without judgment, individuals can cultivate a sense of calm and clarity. Regular practice has also been linked to improved mental health, with benefits such as reduced anxiety and depression. As more people discover the advantages of mindfulness, it is becoming a popular practice in both personal and professional settings.",
+    "title": "The Guide on How to Clean Windows",
+    "content": "To clean windows effectively, start by removing dust and debris from the surface with a dry cloth or duster. Next, prepare a cleaning solution using equal parts water and white vinegar or a commercial window cleaner. Using a microfiber cloth or a squeegee, apply the solution to the window, working from top to bottom to avoid streaks. Wipe the glass in a circular motion, then use the squeegee to remove excess liquid, wiping the blade with a cloth after each pass. Finally, dry the window frame and sill with a clean, dry cloth to complete the job.",
     "authorFirst": "Olivia",
     "authorLast": "Garcia",
     "creationDate": "2023-10-15T12:45:00",
@@ -64,11 +64,27 @@
   },
   {
     "id": 8,
-    "title": "Exploring the Depths of Space: The Next Frontier",
-    "content": "With renewed interest in space exploration, humanity is once again reaching for the stars. Recent missions to Mars and plans to return to the Moon signal the beginning of a new era in space travel. Advances in technology are making it possible to explore deeper into space than ever before, with private companies like SpaceX playing a pivotal role in this next phase of exploration. The future may even see the colonization of other planets, turning science fiction into reality.",
+    "title": "The Guide on How to Clean a Microwave",
+    "content": "To clean the microwave, start by removing any loose debris and food particles. Fill a microwave-safe bowl with equal parts water and vinegar, and place it inside the microwave. Heat on high for 5 minutes, allowing the steam to loosen grime. Carefully remove the bowl (it will be hot) and wipe down the interior surfaces with a damp cloth or sponge. For stubborn spots, use a bit of baking soda on a cloth. Finally, wipe the microwave’s exterior and control panel with a gentle cleaner, and you're done!",
     "authorFirst": "James",
     "authorLast": "Martinez",
     "creationDate": "2023-11-01T18:25:00",
     "lastModified": "2023-11-03T11:55:00"
+  },
+  {
+    "id": 9,
+    "title": "The Guide on How to Vacuum",
+    "content": "To vacuum effectively, start by removing any large debris or obstacles from the floor. Adjust the vacuum settings for the type of surface you’re cleaning—carpet or hard floors. Begin in a corner of the room and work your way toward the exit, using overlapping strokes to ensure thorough coverage. Don’t forget to vacuum under furniture and along edges, and empty the vacuum bag or canister when it’s full to maintain suction power. Regularly clean the filter according to the manufacturer's instructions for optimal performance.",
+    "authorFirst": "Jack",
+    "authorLast": "Trey",
+    "creationDate": "2023-12-05T20:34:00",
+    "lastModified": "2023-12-17T4:09:00"
+  },
+  {
+    "id": 10,
+    "title": "The Guide on How to Fold Laundry",
+    "content": "To vacuum effectively, start by removing any large debris or obstacles from the floor. Adjust the vacuum settings for the type of surface you’re cleaning—carpet or hard floors. Begin in a corner of the room and work your way toward the exit, using overlapping strokes to ensure thorough coverage. Don’t forget to vacuum under furniture and along edges, and empty the vacuum bag or canister when it’s full to maintain suction power. Regularly clean the filter according to the manufacturer's instructions for optimal performance.",
+    "authorFirst": "Maria",
+    "authorLast": "Parker"
   }
 ]

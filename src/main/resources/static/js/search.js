@@ -27,26 +27,42 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(queryResultsRecipes);
       
       // Clear previous results
-      searchResults.innerHTML = '';
-
-      // Render each article
-      queryResultsPost.forEach(article => {
-        renderArticleInfo(article);
-      });
-
-      // Render each article
-      queryResultsRecipes.forEach(article => {
-        renderArticleInfo(article);
-      });
+      searchResults.innerHTML = ''
+      
+      if (queryResultsPost.length > 0) {
+        searchResults.innerHTML += '<h2>Posts</h2>';
+        queryResultsPost.forEach(article => {
+          renderPostInfo(article);
+        });
+      }
+      
+      if (queryResultsRecipes.length > 0) {
+        searchResults.innerHTML += '<h2>Recipes</h2>';
+        queryResultsRecipes.forEach(article => {
+          renderRecipeInfo(article);
+        });
+      }
 
     } catch (error) {
       console.log("Error fetching article data:", error);
     }
   }
 
-  function renderArticleInfo(article) {
+  function renderPostInfo(article) {
     const articleInfoHtml = `
       <a href="http://localhost:8080/posts/${article.id}" id="article-title">${article.title}</a> by 
+      ${article.authorFirst} 
+      ${article.authorLast} <br>
+      Last Modified ${article.lastModified}<br>
+    `;
+  
+    // Append the article info to the searchResults element
+    searchResults.innerHTML += articleInfoHtml; // Use += to add to existing content
+  }
+
+  function renderRecipeInfo(article) {
+    const articleInfoHtml = `
+      <a href="http://localhost:8080/recipes/${article.id}" id="article-title">${article.title}</a> by 
       ${article.authorFirst} 
       ${article.authorLast} <br>
       Last Modified ${article.lastModified}<br>
