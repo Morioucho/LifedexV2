@@ -30,7 +30,7 @@ public class RecipeController {
         for(Recipe recipe : found) {
             log.info(recipe.getTitle());
         }
-        model.addAttribute("recipe", found);
+        model.addAttribute("recipes", found);
 
         return "recipes";
     }
@@ -40,7 +40,7 @@ public class RecipeController {
         Recipe found = recipeService.findByID(id);
 
         if(found != null) {
-            model.addAttribute("recipe", found);
+            model.addAttribute("recipes", found);
             return "recipe";
         }
 

@@ -1,15 +1,11 @@
 package com.morioucho.lifedexv2.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Setter
 @Getter
@@ -20,30 +16,31 @@ public class Recipe {
     private long id;
 
     @Column(length = 255)
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
+    private String content;
+
+    @Column(length = 255)
     private String authorFirst;
 
     @Column(length = 255)
     private String authorLast;
 
-    private int calories;
-
-    @Column(columnDefinition = "TEXT")
-    private String content;
-
-    private String cookTime;
-
     private LocalDateTime creationDate;
-
-    @Column(length = 255)
-    private String cuisine;
-
     private LocalDateTime lastModified;
 
     @Column(columnDefinition = "TEXT")
     private String steps;
 
+    private int cookTime;
+    private int calories;
+
     @Column(length = 255)
-    private String title;
+    private String cuisine;
 
     private int yield;
+
+    @ElementCollection
+    private List<String> ingredients;
 }

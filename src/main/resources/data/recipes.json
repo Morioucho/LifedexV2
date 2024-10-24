@@ -7,7 +7,6 @@
     "authorLast": "Rossi",
     "creationDate": "2023-01-10T11:00:00",
     "lastModified": "2023-01-15T09:30:00",
-    "viewStatistic": { "views": 345 },
     "ingredients": [
       "spaghetti",
       "olive oil",
@@ -30,7 +29,6 @@
     "authorLast": "Sharma",
     "creationDate": "2023-02-05T15:30:00",
     "lastModified": "2023-02-10T14:00:00",
-    "viewStatistic": { "views": 720 },
     "ingredients": [
       "chicken breast",
       "yogurt",
@@ -57,7 +55,6 @@
     "authorLast": "Chen",
     "creationDate": "2023-03-12T10:15:00",
     "lastModified": "2023-03-15T12:00:00",
-    "viewStatistic": { "views": 185 },
     "ingredients": [
       "bell peppers",
       "broccoli",
@@ -82,7 +79,6 @@
     "authorLast": "Gonzalez",
     "creationDate": "2023-04-20T17:00:00",
     "lastModified": "2023-04-25T10:45:00",
-    "viewStatistic": { "views": 410 },
     "ingredients": [
       "ground beef",
       "taco seasoning",
@@ -106,7 +102,6 @@
     "authorLast": "Johnson",
     "creationDate": "2023-05-18T13:00:00",
     "lastModified": "2023-05-20T14:30:00",
-    "viewStatistic": { "views": 590 },
     "ingredients": [
       "overripe bananas",
       "flour",
@@ -130,7 +125,6 @@
     "authorLast": "Russell",
     "creationDate": "2023-09-12T11:00:00",
     "lastModified": "2023-10-01T09:30:00",
-    "viewStatistic": { "views": 1223 },
     "ingredients": [
       "bread",
       "cheese",
@@ -150,7 +144,6 @@
     "authorLast": "Malik",
     "creationDate": "2023-11-22T11:00:00",
     "lastModified": "2023-12-11T09:30:00",
-    "viewStatistic": { "views": 501 },
     "ingredients": [
       "eggs",
       "cheese",
@@ -172,7 +165,6 @@
     "authorLast": "Tanaka",
     "creationDate": "2023-09-12T11:00:00",
     "lastModified": "2023-10-01T09:30:00",
-    "viewStatistic": { "views": 552 },
     "ingredients": [
       "rice",
       "seaweed",
@@ -192,7 +184,6 @@
     "authorLast": "Hongwu",
     "creationDate": "2023-03-30T11:00:00",
     "lastModified": "2023-04-22T09:30:00",
-    "viewStatistic": { "views": 378 },
     "ingredients": [
       "oil",
       "water",
@@ -212,7 +203,6 @@
     "authorLast": "Trussardi",
     "creationDate": "1999-05-11T11:00:00",
     "lastModified": "1999-05-22T09:30:00",
-    "viewStatistic": { "views": 855 },
     "ingredients": [
       "fettuccine",
       "butter",
