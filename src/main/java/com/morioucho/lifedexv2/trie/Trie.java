@@ -1,7 +1,8 @@
 package com.morioucho.lifedexv2.trie;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class Trie {
     private final TrieNode root;
@@ -10,63 +11,64 @@ public class Trie {
         this.root = new TrieNode();
     }
 
-    public void insert(String[] words){
-        for(String word : words){
-            root.insert(word);
-        }
-    }
+    public void insert(String word){
+        TrieNode curr = this.root;
 
-    public void insert(String word) {
-        if(word == null || word.isEmpty()){
-            return;
-        }
+        for(int i = 0; i < word.length(); i++){
+            char ch = word.charAt(i);
 
-        root.insert(word);
-    }
-
-    public boolean find(String prefix){
-        TrieNode currNode = this.root;
-
-        for(char c : prefix.toCharArray()){
-            currNode = currNode.getChildren().get(c);
-
-            if(currNode == null){
-                return false;
-            }
-        }
-
-        return currNode.isWordEnd();
-    }
-
-    public List<String> suggestions(String prefix){
-        List<String> suggestions = new ArrayList<>();
-        StringBuilder buffer = new StringBuilder();
-        TrieNode currNode = this.root;
-
-        for(char c : prefix.toCharArray()){
-            currNode = currNode.getChildren().get(c);
-
-            if(currNode == null){
-                return suggestions;
+            if (!curr.getChildren().containsKey(ch)) {
+                curr.getChildren().put(ch, new TrieNode());
             }
 
-            buffer.append(c);
+            curr = curr.getChildren().get(ch);
         }
-
-        suggest(currNode, suggestions, buffer);
-
-        return suggestions;
     }
 
-    public void suggest(TrieNode node, List<String> suggestions, StringBuilder buffer){
-        if(node.isWordEnd()){
-            suggestions.add(buffer.toString());
+    public boolean exists(String word){
+        TrieNode curr = this.root;
+
+        for(int i = 0; i < word.length(); i++){
+            char ch = word.charAt(i);
+
+            if(!curr.getChildren().containsKey(ch)){
+                return curr.isWordEnd();
+            }
+
+            curr = curr.getChildren().get(ch);
         }
 
-        if(node.getChildren() == null || root.getChildren().isEmpty()){
-            return;
+        return true;
+    }
+
+    public List<String> getAllFromPrefix(String prefix){
+        List<String> found = new ArrayList<>();
+
+        TrieNode curr = this.root;
+        for(int i = 0; i < prefix.length(); i++){
+            char ch = prefix.charAt(i);
+
+            if(!curr.getChildren().containsKey(ch)){
+                return found;
+            }
+
+            curr = curr.getChildren().get(ch);
         }
 
-        return;
+        collectAllWords(curr, new StringBuilder(prefix), found);
+
+        return found;
+    }
+
+    private void collectAllWords(TrieNode node, StringBuilder prefix, List<String> found) {
+        if (node.isWordEnd()) {
+            found.add(prefix.toString());
+        }
+
+        for (Map.Entry<Character, TrieNode> entry : node.getChildren().entrySet()) {
+            prefix.append(entry.getKey());
+            collectAllWords(entry.getValue(), prefix, found);
+            prefix.deleteCharAt(prefix.length() - 1);
+        }
     }
 }
