@@ -34,7 +34,7 @@
     <ul>
         <li th:each="recipe : ${recipes}" class="recipe-item">
             <div class="recipe-image">
-                <img th:src="${recipe.imageURL}" th:alt="${recipe.imageCaption}"/>
+                <img th:src="${recipe.imageURL}" th:alt="${recipe.imageCaption}" width="500px"/>
             </div>
 
             <div class="recipe-content">

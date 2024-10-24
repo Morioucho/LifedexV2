@@ -29,7 +29,7 @@
     <ul>
         <li th:each="post : ${posts}" class="post-item">
             <div class="post-image">
-                <img th:src="${post.imageURL}" th:alt="${post.imageCaption}"/>
+                <img th:src="${post.imageURL}" th:alt="${post.imageCaption}" width="500px"/>
             </div>
 
             <div class="post-content">
